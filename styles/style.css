@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap");
 
 :root {
-  --accent: #1f5f99;
-  --accent-soft: #eef6ff;
-  --ink: #272727;
-  --muted: #6d6d6d;
-  --line: #dce7f2;
+  --accent: #18364d;
+  --accent-soft: #f1f5f6;
+  --ink: #20282e;
+  --muted: #68747c;
+  --line: #e1e7e9;
   --paper: #ffffff;
-  --page: #f5f8fc;
+  --page: #ffffff;
 }
 
 * {
@@ -21,27 +21,21 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: Lato, Arial, sans-serif;
+  font-family: "DM Sans", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.65;
-  background:
-    linear-gradient(180deg, rgba(31, 95, 153, 0.08), rgba(31, 95, 153, 0) 260px),
-    var(--page);
+  line-height: 1.55;
+  background: var(--page);
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 980px;
   padding-right: 24px;
   padding-left: 24px;
 }
 
 .content {
-  margin: 36px auto 28px;
-  padding: 38px 44px 30px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 22px 60px rgba(32, 32, 32, 0.08);
+  margin: 54px auto 32px;
+  padding: 0 28px 34px;
 }
 
 h1,
@@ -53,10 +47,12 @@ h4 {
 }
 
 h1 {
-  margin: 0 0 18px;
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
   font-size: 40px;
-  line-height: 1.15;
-  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -93,11 +89,14 @@ a:not([href]) {
 }
 
 .profile-hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin: 0 0 30px;
-  padding-bottom: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-rows: auto auto;
+  column-gap: 54px;
+  row-gap: 10px;
+  align-items: start;
+  margin: 0 0 38px;
+  padding-bottom: 42px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -106,10 +105,14 @@ a:not([href]) {
 }
 
 .profile-intro {
-  padding-right: 36px;
+  grid-column: 1;
+  grid-row: 1;
+  width: auto;
+  padding: 0;
 }
 
 .profile-quote {
+  display: none;
   max-width: 660px;
   margin: 0 0 8px;
   padding-left: 18px;
@@ -123,71 +126,96 @@ a:not([href]) {
 }
 
 .profile-quote-author {
+  display: none;
   margin: 0 0 22px;
   color: var(--muted);
   font-style: italic;
 }
 
 .profile-links {
-  margin-top: 16px;
-}
-
-.profile-links strong {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
+  gap: 20px;
+  width: 170px;
+  margin: 15px auto 0;
 }
 
 .profile-links a[href] {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 6px 12px;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
   color: var(--accent);
-  background: var(--accent-soft);
-  border: 1px solid rgba(31, 95, 153, 0.18);
-  border-radius: 999px;
+  background: transparent;
+  border: 0;
   text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition: opacity 0.18s ease;
 }
 
 .profile-links a[href]:hover,
 .profile-links a[href]:focus {
-  background: #f7fbff;
-  box-shadow: 0 8px 18px rgba(31, 95, 153, 0.12);
-  transform: translateY(-1px);
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.65;
 }
 
 .profile-card {
-  color: var(--muted);
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: auto;
+  padding: 0;
+  align-self: start;
+  text-align: left;
 }
 
 .profile-card img {
-  width: 150px;
+  display: block;
+  width: 158px;
   max-width: 100%;
-  margin-bottom: 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(32, 32, 32, 0.14);
+  margin: 0 auto;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
-.profile-email {
-  margin-bottom: 4px;
-  color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 14px;
+.profile-card .profile-links img {
+  width: 24px;
+  height: 24px;
+  border-radius: 0;
+}
+
+.cv-icon {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.profile-contact {
+  margin: 8px 0 0;
+  color: #53616a;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: nowrap;
 }
 
 .bio-section {
-  flex-basis: 100%;
-  width: 100%;
-  margin-top: 28px;
-  padding: 26px 0 0;
-  border-top: 1px solid var(--line);
+  grid-column: 1;
+  grid-row: 2;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .bio-section p {
-  max-width: 860px;
+  max-width: none;
+  margin: 0 0 12px;
+  text-wrap: pretty;
+}
+
+.bio-section p:last-child {
   margin-bottom: 0;
 }
 
@@ -248,16 +276,18 @@ a:not([href]) {
 .publication-panel .panel-body img {
   width: 100% !important;
   max-width: 250px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   background: #f4f5f6;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
-  box-shadow: 0 10px 24px rgba(32, 32, 32, 0.1);
+  box-shadow: 0 5px 14px rgba(32, 32, 32, 0.07);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .publication-panel .panel-body img:hover {
-  box-shadow: 0 14px 30px rgba(32, 32, 32, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(32, 32, 32, 0.1);
+  transform: translateY(-1px);
 }
 
 .red,
@@ -267,6 +297,7 @@ a:not([href]) {
 
 .publication-panel h4.red {
   margin-bottom: 8px;
+  color: var(--ink);
   font-size: 18px;
   line-height: 1.4;
 }
@@ -331,16 +362,18 @@ li {
   }
 
   .content {
-    margin: 16px auto;
-    padding: 26px 20px 24px;
+    margin: 28px auto 16px;
+    padding: 0 6px 24px;
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .profile-hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
   }
 
   .profile-intro,
@@ -352,12 +385,22 @@ li {
   }
 
   .profile-card {
-    margin-top: 24px;
+    order: 3;
+    margin: 26px 0 0;
     text-align: left;
   }
 
   .profile-card img {
-    width: 132px;
+    width: 150px;
+  }
+
+  .bio-section {
+    order: 2;
+    margin-top: 24px;
+  }
+
+  .profile-contact {
+    white-space: normal;
   }
 
   .publication-panel .panel-body > .row {
