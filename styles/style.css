@@ -2,8 +2,8 @@
 
 :root {
   --accent: #18364d;
-  --link: #254b66;
-  --link-hover: #1b3850;
+  --link: #315f7d;
+  --link-hover: #244c66;
   --accent-soft: #f1f5f6;
   --ink: #20282e;
   --muted: #68747c;
@@ -75,22 +75,18 @@ h4 {
 
 a,
 a:visited,
-a:hover,
-a:focus,
 a:active {
   color: var(--link);
-  text-decoration: none !important;
-  text-decoration-line: none !important;
+  text-decoration: none;
+  text-decoration-line: none;
 }
 
 a:hover,
 a:focus {
   color: var(--link-hover);
-}
-
-a[href] {
-  text-decoration: none !important;
-  text-decoration-line: none !important;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 a:not([href]) {
