@@ -2,6 +2,8 @@
 
 :root {
   --accent: #18364d;
+  --link: #0066c2;
+  --link-hover: #004a8f;
   --accent-soft: #f1f5f6;
   --ink: #20282e;
   --muted: #68747c;
@@ -71,14 +73,18 @@ h4 {
   margin-top: 0;
 }
 
-a,
+a {
+  color: var(--link);
+}
+
 a:hover,
 a:focus {
-  color: var(--accent);
+  color: var(--link-hover);
 }
 
 a[href] {
-  text-decoration-thickness: 1px;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
 }
 
