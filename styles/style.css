@@ -2,8 +2,8 @@
 
 :root {
   --accent: #18364d;
-  --link: #3f687b;
-  --link-hover: #2d5062;
+  --link: #254b66;
+  --link-hover: #1b3850;
   --accent-soft: #f1f5f6;
   --ink: #20282e;
   --muted: #68747c;
@@ -73,8 +73,14 @@ h4 {
   margin-top: 0;
 }
 
-a {
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
   color: var(--link);
+  text-decoration: none !important;
+  text-decoration-line: none !important;
 }
 
 a:hover,
@@ -83,7 +89,8 @@ a:focus {
 }
 
 a[href] {
-  text-decoration: none;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
 }
 
 a:not([href]) {
